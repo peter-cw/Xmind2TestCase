@@ -1,0 +1,64 @@
+test: # 测试环境mysql数据库连接配置
+  single: #数据路直连配置参数，此处列出仅为部分，详细请参考pymysql模块Connect方法
+    host: 127.0.0.1
+    password: test@12345
+    port: 3306
+    user: root
+    charset: utf8
+
+  pool: #数据路连接池配置参数，此处列出仅为部分，详细请参考DBUtils模块dbutils.pooled_db.PooledDB__init__方法
+    host: 127.0.0.1
+    password: test@12345
+    port: 8000
+    user: root
+    charset: utf-8
+    creator: pymysql
+    mincached: 1
+    maxcached: 20
+    maxshared: 20
+    blocking: True
+
+
+
+
+dev: # 开发环境mysql数据库连接配置
+  single: #数据路直连配置参数
+    host: 127.0.0.1
+    password: test@12345
+    port: 8000
+    user: root
+    charset: utf-8
+
+  pool: #数据路连接池配置参数
+    host: 127.0.0.1
+    password: test@12345
+    port: 8000
+    user: root
+    charset: utf-8
+    creator: pymysql
+    mincached: 1
+    maxcached: 20
+    maxshared: 20
+    blocking: True
+
+
+
+online: # 现网环境mysql数据库连接配置
+  single: #数据路直连配置参数
+    host: 127.0.0.1
+    password: test@12345
+    port: 8000
+    user: root
+    charset: utf-8
+
+  pool: #数据路连接池配置参数
+    host: 127.0.0.1
+    password: test@12345
+    port: 8000
+    user: root
+    charset: utf-8
+    creator: pymysql
+    mincached: 1
+    maxcached: 20
+    maxshared: 20
+    blocking: True

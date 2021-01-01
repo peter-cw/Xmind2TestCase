@@ -1,0 +1,17 @@
+test: # 测试环境mysql数据库连接配置
+  single: #数据路直连配置参数，此处列出仅为部分，详细请参考pymysql模块Connect方法
+    user: root  #用户名
+    password: test@12345 #密码
+    dsn: 127.0.0.1:8000 #dsn是data source name的缩写，用于描述数据源的详细地址，一般由数据库所在主机地址、端口和服务名组成。在默认情况下，Oracle数据库对应1521端口，在这种情况下，dsn中可以省略端口：
+    encoding: utf-8 #编码
+    # mode: cx_Oracle.SYSDBA
+    # 有时候，我们需要以管理员身份登录数据库，这时候，直接连接时不行的，将会跑出异常：DatabaseError: ORA-28009: connection as SYS should be as SYSDBA or SYSOPER，这时候可以传递参数mode=cx_Oracle.SYSDBA
+
+  pool: #数据路连接池配置参数，此处列出仅为部分，详细请参考DBUtils模块dbutils.pooled_db.PooledDB__init__方法
+    user: root
+    password: test@12345
+    dsn: 127.0.0.1:8000
+    encoding: utf-8
+    min: 1
+    max: 20
+    threaded: True #如果是在多线程下同时使用连接，那么在创建连接池时应该传递一个threaded参数，并将值设置为True

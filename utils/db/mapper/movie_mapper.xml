@@ -1,0 +1,10 @@
+<database name="movie">
+    <table name="movie">
+        <column name="mid">电影ID</column>
+        <column name="expired" value="是否过期">
+            <value-map name="0" value="否"/>
+            <value-map name="1" value="是"/>
+        </column>
+
+    </table>
+</database>
